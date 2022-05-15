@@ -14,3 +14,22 @@ window.addEventListener("load", () => {
       });
     });
 });
+
+const getMarkdown = (fileName) => {
+  const url = "http://localhost:3000/getmarkdown";
+
+  const req = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ fileName }),
+  };
+  fetch(url, req)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      const textContainer = document.getElementById("text");
+      textContainer.innerHTML = data.htmlText;
+    });
+};
