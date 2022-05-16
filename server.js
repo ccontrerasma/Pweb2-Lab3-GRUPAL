@@ -42,3 +42,22 @@ app.post("/getmarkdown", (request, response) => {
     }
   );
 });
+
+app.post("/submit", (req, res) => {
+  const { name, text } = req.body;
+  fs.writeFile(
+    path.resolve(__dirname, `public/files/${name}.md`),
+    text,
+    (err) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({
+          err,
+        });
+      }
+      res.json({
+        message: "Archivo guardado",
+      });
+    }
+  );
+});
