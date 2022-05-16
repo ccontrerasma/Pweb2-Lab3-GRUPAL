@@ -33,3 +33,32 @@ const getMarkdown = (fileName) => {
       textContainer.innerHTML = data.htmlText;
     });
 };
+
+const createTextArea = () => {
+  const textContainer = document.getElementById("text");
+  textContainer.innerHTML = ""; //formatear contenedor
+  const form = document.createElement("form");
+  form.id = "form";
+  const inputName = document.createElement("input");
+  inputName.id = "name";
+  inputName.type = "text";
+  inputName.placeholder = "Nombre del archivo";
+
+  const textArea = document.createElement("textarea");
+
+  textArea.id = "textArea";
+  textArea.name = "textArea";
+  textArea.placeholder = "Escribe aquí tu texto markdown";
+  const button = document.createElement("button");
+  button.id = "button-submit";
+  button.type = "submit";
+  button.innerHTML = "Enviar";
+  form.onsubmit = (e) => {
+    submitFile(e.target.name.value, e.target.textArea.value);
+    e.preventDefault();
+  };
+  form.appendChild(inputName);
+  form.appendChild(textArea);
+  form.appendChild(button);
+  textContainer.appendChild(form);
+};
