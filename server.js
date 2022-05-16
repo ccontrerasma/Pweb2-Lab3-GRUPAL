@@ -23,3 +23,22 @@ app.get("/files", (req, res) => {
     res.send(files);
   });
 });
+
+app.post("/getmarkdown", (request, response) => {
+  const { fileName } = request.body;
+  fs.readFile(
+    path.resolve(__dirname, `public/files/${fileName}`),
+    "utf8",
+    (err, data) => {
+      if (err) {
+        console.error(err);
+        return response.status(500).json({
+          err,
+        });
+      }
+      response.json({
+        htmlText: md.render(data),
+      });
+    }
+  );
+});
