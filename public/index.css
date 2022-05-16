@@ -1,0 +1,26 @@
+* {
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .list-item:hover {
+    cursor: pointer;
+  }
+  
+  #titulo{
+    color:black;
+      line-height: 100px;
+      font-size: 100px;
+      margin-top:0;
+      margin-bottom:50;
+  }
+  .body .container{
+    position: relative;
+    top: 100px;
+  }
+  input[type=text], select,textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    resize:vertical;
+  }
