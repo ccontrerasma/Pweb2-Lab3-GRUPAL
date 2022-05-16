@@ -6,21 +6,25 @@
     cursor: pointer;
   }
   
-  #titulo{
-    color:black;
-      line-height: 100px;
-      font-size: 100px;
-      margin-top:0;
-      margin-bottom:50;
-  }
-  .body .container{
+  .container{
+    margin: 0 auto; 
+    max-width: 1000px;  
+    padding: 0; 
     position: relative;
-    top: 100px;
+    width: 100%;
   }
+  
   input[type=text], select,textarea{
     width:100%;
     padding:12px;
     border:1px solid #ccc;
     border-radius:4px;
     resize:vertical;
+  }
+  .header h1 {
+    color: black;
+    line-height: 200px;
+    font-size: 100px;
+    margin-bottom: 50px;
+    text-align:center;
   }
