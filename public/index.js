@@ -62,3 +62,24 @@ const createTextArea = () => {
   form.appendChild(button);
   textContainer.appendChild(form);
 };
+const submitFile = (name, text) => {
+  const url = "http://localhost:3000/submit";
+  const req = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, text }),
+  };
+  fetch(url, req)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      if (data.err) {
+        alert(data.err);
+      } else {
+        alert(data.message);
+      }
+    });
+};
+
