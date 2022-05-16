@@ -1,0 +1,65 @@
+* {
+  
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+  
+  .list-item:hover {
+    cursor: pointer;
+  }
+  
+  .container{
+    margin: 0 auto; 
+    max-width: 1000px;  
+    padding: 0; 
+    position: relative;
+    width: 100%;
+   
+  }
+  html{
+   
+    background: url(fondo.jpg); no-repeat center center;
+      background-size: cover;
+  }
+  
+  input[type=text], textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    resize:vertical;
+   
+    padding:12px 20px;
+  
+    border-radius:4px;
+   
+  }
+  .header h1 {
+    color: white;
+    margin-top: 150px;
+    font-size: 100px;
+    margin-bottom: 50px;
+    text-align:center;
+  }
+  .header h2{color: yellow;}
+  .header h3{color: skyblue}
+  
+  button { 
+  
+    color: #fff; 
+    background: #000; 
+    padding: 10px 40px;
+    text-decoration: none;  
+    transition: background .10s;  
+  } 
+  
+  button:hover { 
+    background: #D03D77; 
+    cursor: pointer;  
+    transition: background .5s;   
+  } 
+  #list{
+    color:rgb(192, 118, 92)
+  }
+  #text{
+    color:rgb(116, 201, 158)
+  }
