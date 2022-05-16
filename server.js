@@ -13,3 +13,13 @@ app.use(express.json());
 app.listen(3000, () => {
   console.log("Escuchando en: http://localhost:3000");
 });
+
+app.get("/", (request, response) => {
+  response.sendFile(path.resolve(__dirname, "public/index.html"));
+});
+
+app.get("/files", (req, res) => {
+  fs.readdir("./public/files/", (err, files) => {
+    res.send(files);
+  });
+});
